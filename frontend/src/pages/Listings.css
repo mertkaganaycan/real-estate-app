@@ -1,0 +1,33 @@
+.listings-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.listings-wrapper h1 {
+  margin-bottom: 2rem;
+}
+
+.listings-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center; /* ✅ centers the cards */
+}
+
+.listing-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  text-align: center;
+}
+
+.listing-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 6px;
+}

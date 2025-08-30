@@ -75,7 +75,7 @@ router.put('/:id', auth, upload.single('image'), async (req, res) => {
     if (address     !== undefined) listing.address     = address;
 
     if (req.file) {
-      const newPath = `/uploads/${req.file.filename}`;
+      const newPath = `/uploads/listing-images/${req.file.filename}`;
       console.log('   ✅ new image path:', newPath);
 
       // Build absolute path RELATIVE TO THIS ROUTE FILE

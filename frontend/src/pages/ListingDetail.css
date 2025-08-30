@@ -1,0 +1,96 @@
+/* Overall wrapper */
+.listing-detail {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Back button */
+.listing-detail .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  background-color: #4f46e5;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.listing-detail .btn:hover {
+  background-color: #4338ca;
+}
+
+/* Title */
+.listing-detail h1 {
+  font-size: 26px;
+  margin-bottom: 16px;
+  color: #111827;
+  text-transform: capitalize;
+}
+
+/* Image */
+.detail-image {
+  display: block;
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Description */
+.listing-detail p {
+  font-size: 16px;
+  color: #374151;
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+/* Price styling */
+.listing-detail .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #16a34a;  /* ✅ Green price for emphasis */
+  margin-top: 10px;
+}
+
+/* Phone styling */
+.listing-detail .phone {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e293b;
+  margin-top: 5px;
+}
+
+/* Meta info (location, owner, date) */
+.listing-detail .meta {
+  margin-top: 12px;
+  font-size: 15px;
+  color: #555;
+}
+
+/* Add spacing between sections */
+.listing-detail p + p {
+  margin-top: 8px;
+}
+
+/* Price container */
+.listing-detail .price {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #111; /* default black for label + ₺ */
+}
+
+/* Make the numeric value green only */
+.listing-detail .price .amount {
+  font-weight: bold;
+  color: #16a34a; /* ✅ green */
+}

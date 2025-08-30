@@ -19,7 +19,7 @@ const NavBar = () => {
       </div>
       <div className="navbar-links">
         <Link to="/listings">View Listings</Link>
-        <Link to="/my-listings">My Listings</Link>
+        <Link to="/profile">My Profile</Link>
         <Link to="/add-listing">Add Listing</Link>
 
         {!token ? (
@@ -28,7 +28,7 @@ const NavBar = () => {
             <Link to="/register">Register</Link>
           </>
         ) : (
-          <button onClick={handleLogout} className="logout-button">Logout</button>
+          <button  onClick={handleLogout} className="logout-button">Logout</button>
         )}
       </div>
     </nav>

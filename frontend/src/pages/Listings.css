@@ -1,3 +1,4 @@
+
 .listings-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -12,7 +13,7 @@
 .listings-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 10px;
   justify-content: center; /* ✅ centers the cards */
 }
 
@@ -23,6 +24,7 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   width: 280px;
   text-align: center;
+  margin: 10px;
 }
 
 .listing-card img {
@@ -30,4 +32,26 @@
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 6px;
+
 }
+
+.btn.btn-detail {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #4f46e5;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+
+
+
+.skeleton { animation: pulse 1.2s ease-in-out infinite; }
+.img-sk { width:100%; aspect-ratio:1/1; border-radius:8px; background:#eee; }
+.line-sk { height:14px; margin-top:10px; border-radius:6px; background:#eee; }
+.line-sk.short { width:60%; }
+@keyframes pulse { 0%{opacity:.6} 50%{opacity:1} 100%{opacity:.6} }

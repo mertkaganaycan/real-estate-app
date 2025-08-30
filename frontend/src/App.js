@@ -7,7 +7,9 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Listings from "./pages/Listings";
-import MyListings from "./pages/MyListings";
+import Profile from "./pages/Profile";
+import ListingDetail from "./pages/ListingDetail";
+import EditListing from "./pages/EditListing";
 
 
 
@@ -16,16 +18,17 @@ function App() {
     <Router>
       <div className="bg-gray-100 min-h-screen">
         <NavBar />
-        {/* Add mt-16 here to push content below the fixed navbar */}          <Routes>
+        {/* Add mt-16 here to push content below the fixed navbar */}          
+        <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/add-listing" element={<AddListing />} />
             <Route path="/listings" element={<Listings />} />
-            <Route path="/my-listings" element={<MyListings />} />
-            <Route path="*" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/listing/:id" element={<ListingDetail />} />
+            <Route path="/edit-listing/:id" element={<EditListing />} />
           </Routes>
-        
       </div>
     </Router> 
   );

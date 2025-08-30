@@ -1,32 +1,24 @@
-const express = require('express');                 // Import Express framework
-const mongoose = require('mongoose');               // Import Mongoose to talk to MongoDB
-const cors = require('cors');                       // Import CORS to allow cross-origin requests
-const dotenv = require('dotenv');   
-const app = express();            // Import dotenv to load .env config
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const path = require('path');
 
 
-dotenv.config();                                    // Load environment variables from .env                          // Create the Express app
+dotenv.config();
 
-app.use(cors());                                    // Allow frontend requests from other origins
-app.use(express.json());                            // Parse incoming JSON bodies
-app.use('/uploads', express.static('uploads'));  
-   // Serve image files statically
+const app = express();
 
-  
-// Import route files
-const userRoutes = require('./routes/users');       
-const listingRoutes = require('./routes/listings');
+app.use(cors());
+app.use(express.json());
 
+// ✅ serve uploads (avatars + listing images)
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Mount routes with prefixes
-app.use('/api/users', userRoutes);                  // All /api/users requests go to users.js
-app.use('/api/listings', listingRoutes);           // All /api/listings requests go to listings.js
+// ✅ mount routes once
+app.use('/api/users', require('./routes/users'));
+app.use('/api/listings', require('./routes/listings'));
 
-// Connect to MongoDB using URI from .env
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => {
-    // If successful, start the server
-    app.listen(5050, () => console.log("Server running on port 5050"));
-  })
-  .catch(err => console.error("Server not running", err));
-                // Log error if connection fails
+  .then(() => app.listen(5050, () => console.log('Server running on 5050')))
+  .catch(err => console.error('Server not running', err));
